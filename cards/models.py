@@ -5,7 +5,10 @@ from django.urls import reverse
 
 class Card(models.Model):
     title = models.CharField(max_length=255)
+    rating = models.CharField(max_length=255)
+    seasons = models.CharField(max_length=255)
     body = models.TextField()
+    stream_sites = models.TextField()
     cover = models.ImageField(upload_to='images/')
 
     def __str__(self):
