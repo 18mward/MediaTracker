@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="media">
+  <img src="{{ object.cover.url }}" class="w-25 p-3" alt="...">
+  <div class="media-body">
+    <h1 class="mt-0">{{ object.title }}</h1>
+	<p>{{ object.rating }}</p>
+	<p>{{ object.seasons }}</p>
+	&nbsp
+	<p>{{ object.body }}</p>
+	<p>{{ object.stream_sites }}</p>
+  </div>
+ </div>
+</div>
+{% endblock content %}

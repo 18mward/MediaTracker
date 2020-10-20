@@ -1,4 +1,4 @@
-from django.views.generic import ListView
+from django.views.generic import ListView, DetailView
 from .models import Card
 
 class CardListView(ListView):
@@ -8,3 +8,7 @@ class CardListView(ListView):
 class MovieListView(ListView):
     model = Card
     template_name = 'movie_list.html'
+
+class CardDetailView(DetailView):
+    model = Card
+    template_name = 'card_detial.html'
