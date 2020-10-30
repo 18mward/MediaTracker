@@ -3,12 +3,16 @@
 {% block title %}Home{% endblock title %}
 
 {% block content %}
-<div class="jumbotron">
+<div class="jumbotron text-center">
 	<h1 class="display-4">Welcome to Media Tracker!</h1>
 	<p class="lead">Track all of the movies and series you've watched with one simple app.</p>
 	<p class="lead">
 		<a class="btn btn-primary btn-lg" href="{% url 'card_list' %}"
 		role="button">View All Media</a>
+		<a class="btn btn-primary btn-lg" href="{% url 'movie_list' %}"
+		role="button">View All Movies</a>
+		<a class="btn btn-primary btn-lg" href="{% url 'series_list' %}"
+		role="button">View All Series</a>
 	</p>
 </div>
 {% endblock content %}
