@@ -10,6 +10,7 @@ class Card(models.Model):
     body = models.TextField()
     stream_sites = models.TextField()
     cover = models.ImageField(upload_to='images/')
+    mediatype = models.CharField(max_length=255)
 
     def __str__(self):
         return self.title

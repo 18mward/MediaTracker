@@ -1,4 +1,33 @@
 {% extends 'base.html' %}
+{% block title %}Media Tracker{% endblock title %}
 {% block content %}
-<h1>Insert movie cards here.</h1>
+	<div class="row row-cols-1 row-cols-md-2">
+	{% for card in object_list %}
+	{% if card.mediatype == "movie" %}
+		<div class="row mx-2">
+			<div class="card bg-light mb-3" style="width: 22rem;">
+			  <div class="row no-gutters">
+				<div class="col-md-4">
+				  <img src="{{ card.cover.url }}" class="card-img" alt="{{ card.title }}">
+				</div>
+				<div class="col-md-8">
+				  <div class="card-body">
+					<h5 class="card-title">{{ card.title }}</h5>
+					<p class="card-text">{{ card.rating }}</p>
+					<p class="card-text">{{ card.seasons }}</p>
+					<p class="card-text">{{ card.body }}</p>
+					<p class="card-text">{{ card.stream_sites }}</p>
+				  </div>
+				  <div class="text-center">
+				  <a href="{% url 'card_detail' card.pk %}" class="btn btn-primary btn-sm">More Info</a>
+				  <p></p>
+				  </div>
+				</div>
+			  </div>
+			</div>
+			<br />
+		</div>
+	{% endif %}
+	{% endfor %}
+	</div>
 {% endblock content %}
