@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
-{% block title %}Home{% endblock title %}
+{% block title %}Media Tracker{% endblock title %}
 
 {% block content %}
 <div class="jumbotron text-center">
 	<h1 class="display-4">Welcome to Media Tracker!</h1>
-	<p class="lead">Track all of the movies and series you've watched with one simple app.</p>
+	<p class="lead">Find new shows to watch and track all of track all of the ones that you have with one simple app.</p>
 	{% if user.is_authenticated %}
 	<p class="lead">
 		<a class="btn btn-primary btn-lg" href="{% url 'card_list' %}"
