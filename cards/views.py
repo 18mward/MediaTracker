@@ -1,22 +1,29 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import ListView, DetailView
 from .models import Card
+from django.urls import reverse_lazy
 
-class CardListView(ListView):
+class CardListView(LoginRequiredMixin, ListView):
     model = Card
     template_name = 'card_list.html'
+    login_url = 'login'
 
-class MovieListView(ListView):
+class MovieListView(LoginRequiredMixin, ListView):
     model = Card
     template_name = 'movie_list.html'
+    login_url = 'login'
 
-class SeriesListView(ListView):
+class SeriesListView(LoginRequiredMixin, ListView):
     model = Card
     template_name = 'series_list.html'
+    login_url = 'login'
     
-class WatchedListView(ListView):
+class WatchedListView(LoginRequiredMixin, ListView):
     model = Card
     template_name = 'watched_list.html'
+    login_url = 'login'
 
-class CardDetailView(DetailView):
+class CardDetailView(LoginRequiredMixin, DetailView):
     model = Card
     template_name = 'card_detial.html'
+    login_url = 'login'

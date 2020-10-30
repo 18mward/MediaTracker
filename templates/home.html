@@ -6,6 +6,7 @@
 <div class="jumbotron text-center">
 	<h1 class="display-4">Welcome to Media Tracker!</h1>
 	<p class="lead">Track all of the movies and series you've watched with one simple app.</p>
+	{% if user.is_authenticated %}
 	<p class="lead">
 		<a class="btn btn-primary btn-lg" href="{% url 'card_list' %}"
 		role="button">View All Media</a>
@@ -14,5 +15,11 @@
 		<a class="btn btn-primary btn-lg" href="{% url 'series_list' %}"
 		role="button">View All Series</a>
 	</p>
+	{% else %}
+	<p class="lead">
+		<a class="btn btn-primary btn-lg" href="{% url 'login' %}" role="button">Log In</a>
+		<a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button">Sign Up</a>
+	</p>
+	{% endif %}
 </div>
 {% endblock content %}
