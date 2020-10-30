@@ -12,6 +12,10 @@ class MovieListView(ListView):
 class SeriesListView(ListView):
     model = Card
     template_name = 'series_list.html'
+    
+class WatchedListView(ListView):
+    model = Card
+    template_name = 'watched_list.html'
 
 class CardDetailView(DetailView):
     model = Card

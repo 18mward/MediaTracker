@@ -24,16 +24,16 @@
 	  </button>
 	  <ul class="nav nav-pills">
 		  <li class="nav-item">
-			<a class="nav-link active" href="{% url 'card_list' %}">All Media</a>
+			<a href="{% url 'card_list' %}" {% if request.path == '/allmedia/' %} class="nav-link active" {% else %} class="nav-link" {% endif %}>All Media</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="{% url 'movie_list' %}">Movies</a>
+			<a href="{% url 'movie_list' %}" {% if request.path == '/allmedia/movies/' %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Movies</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="{% url 'series_list' %}">Series</a>
+			<a href="{% url 'series_list' %}" {% if request.path == '/allmedia/series/' %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Series</a>
 		  </li>
 		  <li class="nav-item">
-			<a class="nav-link" href="{% url 'card_list' %}">Watched List</a>
+			<a href="{% url 'watched_list' %}" {% if request.path == '/allmedia/watched_list/' %} class="nav-link active" {% else %} class="nav-link" {% endif %}>Watched List</a>
 		  </li>
 	  </ul>
     <div class="collapse navbar-collapse" id="navbarCollapse">
