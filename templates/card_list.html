@@ -4,7 +4,7 @@
 	<div class="row row-cols-1 row-cols-md-2">
 	{% for card in object_list %}
 		<div class="row mx-2">
-			<div class="card bg-light mb-3" style="width: 22rem;">
+			<div class="shadow-sm card bg-light mb-3" style="width: 22rem;">
 			  <div class="row no-gutters">
 				<div class="col-md-4">
 				  <img src="{{ card.cover.url }}" class="card-img" alt="{{ card.title }}">
@@ -14,12 +14,12 @@
 					<h5 class="card-title">{{ card.title }}</h5>
 					<p class="card-text">{{ card.rating }}</p>
 					<p class="card-text">{{ card.seasons }}</p>
-					<p class="card-text">{{ card.body|truncatechars:48 }}</p>
+					<p class="card-text">{{ card.body|truncatechars:60 }}</p>
 					<p class="card-text">{{ card.stream_sites }}</p>
 				  </div>
 				  <div class="text-center">
-				  <a href="{% url 'card_detail' card.pk %}" class="btn btn-primary btn-sm">More Info</a>
-				  <p></p>
+					  <a href="{% url 'card_detail' card.pk %}" class="btn btn-primary btn-sm">More Info</a>
+					  <p></p>
 				  </div>
 				</div>
 			  </div>
