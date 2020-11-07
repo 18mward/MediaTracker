@@ -5,3 +5,5 @@ class CustomUser(AbstractUser):
     age = models.PositiveIntegerField(null=True, blank=True)
     first_name = models.CharField(max_length=255, null=True, blank=True)
     last_name = models.CharField(max_length=255, null=True, blank=True)
+    watched_media = models.TextField()
+

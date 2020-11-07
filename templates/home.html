@@ -5,14 +5,14 @@
 {% block content %}
 <div class="jumbotron text-center">
 	<h1 class="display-4">Welcome to Media Tracker!</h1>
-	<p class="lead">Find new shows to watch and track all of track all of the ones that you have with one simple app.</p>
+	<p class="lead">Find new shows to watch and track all of the ones that you have with one simple app.</p>
 	{% if user.is_authenticated %}
 	<p class="lead">
-		<a class="btn btn-primary btn-lg" href="{% url 'card_list' %}"
+		<a class="btn btn-primary btn-lg mb-1" href="{% url 'card_list' %}"
 		role="button">View All Media</a>
-		<a class="btn btn-primary btn-lg" href="{% url 'movie_list' %}"
+		<a class="btn btn-primary btn-lg mb-1" href="{% url 'movie_list' %}"
 		role="button">View All Movies</a>
-		<a class="btn btn-primary btn-lg" href="{% url 'series_list' %}"
+		<a class="btn btn-primary btn-lg mb-1" href="{% url 'series_list' %}"
 		role="button">View All Series</a>
 	</p>
 	{% else %}
